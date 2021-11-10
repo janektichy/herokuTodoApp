@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NIaktDAdhhE/UbP3GRbNiqJIE5pCQluISPgwN59taLHg56CNgst2L2TvQzAGq0I1MHJS8AevaXLaHVoPDCl+Eg==",
+  "dgSpecHash": "FZxjUpf+LxpwwtSMvu8RH+RZcEZiIK0miKiFcNxYwbccVTlMXdLdUu7m/RCfOQVGfCbb5tp2mjaIvOXxks5Pbg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Janek\\Documents\\coding\\TodoHeroku\\firstORM\\firstORM\\firstORM.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\Janek\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.11\\microsoft.entityframeworkcore.analyzers.5.0.11.nupkg.sha512",
     "C:\\Users\\Janek\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.11\\microsoft.entityframeworkcore.design.5.0.11.nupkg.sha512",
     "C:\\Users\\Janek\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.11\\microsoft.entityframeworkcore.relational.5.0.11.nupkg.sha512",
+    "C:\\Users\\Janek\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.11\\microsoft.entityframeworkcore.tools.5.0.11.nupkg.sha512",
     "C:\\Users\\Janek\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\Janek\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\Janek\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\5.0.0\\microsoft.extensions.configuration.abstractions.5.0.0.nupkg.sha512",
