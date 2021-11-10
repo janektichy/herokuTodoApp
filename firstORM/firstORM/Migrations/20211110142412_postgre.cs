@@ -1,44 +1,36 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace firstORM.Migrations
 {
-    public partial class init : Migration
+    public partial class postgre : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterDatabase()
-                .Annotation("MySql:CharSet", "utf8mb4");
-
             migrationBuilder.CreateTable(
                 name: "Assignees",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Email = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Assignees", x => x.Id);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateTable(
                 name: "Todos",
                 columns: table => new
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    IsUrgent = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    IsDone = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    DateOfCreation = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Title = table.Column<string>(type: "text", nullable: true),
+                    IsUrgent = table.Column<bool>(type: "boolean", nullable: false),
+                    IsDone = table.Column<bool>(type: "boolean", nullable: false),
+                    DateOfCreation = table.Column<string>(type: "text", nullable: true),
                     AssigneeId = table.Column<long>(type: "bigint", nullable: true)
                 },
                 constraints: table =>
@@ -50,8 +42,7 @@ namespace firstORM.Migrations
                         principalTable: "Assignees",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                })
-                .Annotation("MySql:CharSet", "utf8mb4");
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Todos_AssigneeId",

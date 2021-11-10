@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Janek\\Documents\\coding\\Greenfox\\janektichy\\week-08\\day-02\\firstORM\\firstORM\\firstORM.csproj": {}
+    "C:\\Users\\Janek\\Documents\\coding\\TodoHeroku\\firstORM\\firstORM\\firstORM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Janek\\Documents\\coding\\Greenfox\\janektichy\\week-08\\day-02\\firstORM\\firstORM\\firstORM.csproj": {
+    "C:\\Users\\Janek\\Documents\\coding\\TodoHeroku\\firstORM\\firstORM\\firstORM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Janek\\Documents\\coding\\Greenfox\\janektichy\\week-08\\day-02\\firstORM\\firstORM\\firstORM.csproj",
+        "projectUniqueName": "C:\\Users\\Janek\\Documents\\coding\\TodoHeroku\\firstORM\\firstORM\\firstORM.csproj",
         "projectName": "firstORM",
-        "projectPath": "C:\\Users\\Janek\\Documents\\coding\\Greenfox\\janektichy\\week-08\\day-02\\firstORM\\firstORM\\firstORM.csproj",
+        "projectPath": "C:\\Users\\Janek\\Documents\\coding\\TodoHeroku\\firstORM\\firstORM\\firstORM.csproj",
         "packagesPath": "C:\\Users\\Janek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Janek\\Documents\\coding\\Greenfox\\janektichy\\week-08\\day-02\\firstORM\\firstORM\\obj\\",
+        "outputPath": "C:\\Users\\Janek\\Documents\\coding\\TodoHeroku\\firstORM\\firstORM\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -55,6 +55,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.11, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.10, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",

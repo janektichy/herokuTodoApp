@@ -4,32 +4,35 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using firstORM.Database;
 
 namespace firstORM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211103122622_init")]
-    partial class init
+    [Migration("20211110142412_postgre")]
+    partial class postgre
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.11");
+                .HasAnnotation("Relational:MaxIdentifierLength", 63)
+                .HasAnnotation("ProductVersion", "5.0.11")
+                .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
             modelBuilder.Entity("firstORM.Models.Entities.Assignee", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<string>("Email")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -40,22 +43,23 @@ namespace firstORM.Migrations
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                        .HasColumnType("bigint")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
                     b.Property<long?>("AssigneeId")
                         .HasColumnType("bigint");
 
                     b.Property<string>("DateOfCreation")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.Property<bool>("IsDone")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<bool>("IsUrgent")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Title")
-                        .HasColumnType("longtext");
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

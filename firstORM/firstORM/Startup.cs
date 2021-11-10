@@ -30,7 +30,8 @@ namespace firstORM
             services.AddControllersWithViews();
             services.AddTransient<TodoService>();
             services.AddTransient<AssigneeService>();
-            ConfigureDb(services);
+            //ConfigureDb(services);
+            ConfigurePostgre(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -59,6 +60,11 @@ namespace firstORM
                 .LogTo(Console.WriteLine, LogLevel.Information)
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors());
+        }
+        private void ConfigurePostgre(IServiceCollection services)
+        {
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseNpgsql(AppConfig.GetConnectionString("PostgreConnection")));
         }
     }
 }
