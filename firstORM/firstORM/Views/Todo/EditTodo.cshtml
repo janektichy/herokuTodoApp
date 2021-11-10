@@ -1,0 +1,44 @@
+﻿@model firstORM.Models.TodoViewModel
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="edit" method="post">
+        <table>
+            <tr>
+                <td>Do you want to change the task? if not, leave it empty</td>
+                <td><input type="text" name="title" /></td>
+            </tr>
+            <tr>
+                <td>Is it urgent task?</td>
+                <td><input type="checkbox" name="isUrgent" value="true"/></td>
+            </tr>
+            <tr>
+                <td>Is that task done?</td>
+                <td><input type="checkbox" name="isDone" value="true"/></td>
+            </tr>
+            <tr>
+                <td>Do you want to assign the task? type in the name of the Assignee</td>
+                <td><input type="text" name="assignee"/></td>
+            </tr>
+        </table>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+<style>
+    body{
+        font-size: 30px;
+        font-family:'Gill Sans';
+    }
+    input{
+        height: 30px;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        outline: none;
+    }
+</style>

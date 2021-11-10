@@ -1,0 +1,90 @@
+﻿@model firstORM.Models.AssigneeViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+
+    <a asp-controller="Assignee" asp-action="AddAssignee">Add new Assignee</a>
+    <a asp-controller="Todo" asp-action="List">List Todos</a>
+    @if (Model.Assignees.Count() > 0)
+    {
+        <form asp-controller="Assignee" asp-action="ListAssignedTodos" method="get">
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+                @for (int i = 0; i < Model.Assignees.Count(); i++)
+                {
+                    <tr>
+                        <td>@Model.Assignees[i].Id</td>
+                        <td><button type="submit" name="Id" value="@Model.Assignees[i].Id">@Model.Assignees[i].Name</button></td>
+                        <td>@Model.Assignees[i].Email</td>
+                        <td><a href="@Model.Assignees[i].Id/delete">delete</a></td>
+                        <td><a href="@Model.Assignees[i].Id/edit">edit</a></td>
+                    </tr>
+                }
+
+            </table>
+        </form>
+            }
+            else
+            {
+            <p>No Assignees Yet</p>
+            }
+    </body>
+</html>
+<style>
+    a {
+        text-decoration: underline;
+        font-size: 20px;
+    }
+
+    td, table {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 20px;
+    }
+
+    tr {
+        background-color: white;
+    }
+
+        tr:nth-child(even) {
+            background-color: lightgray;
+        }
+
+    th {
+        color: white;
+        background-color: black;
+        border: 1px solid white;
+    }
+
+    table {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        font-family: 'Comic Sans MS';
+        width: 60%;
+    }
+    button{
+        outline: none;
+        font-size: 25px;
+        color: blue;
+        text-decoration: underline;
+        background-color: transparent;
+        border: none;
+    }
+    button{
+        cursor: pointer;
+        color: purple;
+    }
+</style>

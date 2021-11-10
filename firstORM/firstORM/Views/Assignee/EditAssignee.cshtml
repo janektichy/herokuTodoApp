@@ -1,0 +1,38 @@
+﻿@model firstORM.Models.AssigneeViewModel
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <form action="edit" method="post">
+        <table>
+            <tr>
+                <td>Do you want to change the name? if not, leave it empty</td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+            <tr>
+                <td>Do you want to change the email? if not, leave it empty</td>
+                <td><input type="email" name="email"/></td>
+            </tr>
+        </table>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
+<style>
+    body {
+        font-size: 30px;
+        font-family: 'Gill Sans';
+    }
+
+    input {
+        height: 30px;
+    }
+
+    button:hover {
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        outline: none;
+    }
+</style>
